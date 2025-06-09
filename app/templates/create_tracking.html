@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Game Tracking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-4">
+  <h2>Create New Game Tracking</h2>
+  <form id="create-tracking-form">
+    <div class="mb-3">
+      <label for="game-date" class="form-label">Game Date</label>
+      <input type="date" class="form-control" id="game-date" required>
+    </div>
+    <div class="mb-3">
+      <h6>Team 1</h6>
+      <div class="d-flex gap-2 mb-2">
+        <button type="button" class="btn btn-outline-secondary d-flex align-items-center add-player-btn" data-team="1" data-slot="0">
+          <i class="bi bi-plus-circle me-2"></i> <span>Add Player</span>
+        </button>
+        <button type="button" class="btn btn-outline-secondary d-flex align-items-center add-player-btn" data-team="1" data-slot="1">
+          <i class="bi bi-plus-circle me-2"></i> <span>Add Player</span>
+        </button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <h6>Team 2</h6>
+      <div class="d-flex gap-2 mb-2">
+        <button type="button" class="btn btn-outline-secondary d-flex align-items-center add-player-btn" data-team="2" data-slot="0">
+          <i class="bi bi-plus-circle me-2"></i> <span>Add Player</span>
+        </button>
+        <button type="button" class="btn btn-outline-secondary d-flex align-items-center add-player-btn" data-team="2" data-slot="1">
+          <i class="bi bi-plus-circle me-2"></i> <span>Add Player</span>
+        </button>
+      </div>
+    </div>
+    <div class="mb-2 text-muted small">Each team must have exactly 2 players. Players cannot be on both teams.</div>
+    <div class="px-3 pt-2 pb-2">
+      <button type="submit" class="btn btn-success w-100">Create and Start Tracking</button>
+      <div id="create-tracking-feedback" class="mt-2"></div>
+    </div>
+  </form>
+</div>
+
+<!-- Player Select Modal -->
+<div class="modal fade" id="playerSelectModal" tabindex="-1" aria-labelledby="playerSelectModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="playerSelectModalLabel">Select Player</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control mb-3" id="player-search-input" placeholder="Search players by name...">
+        <ul class="list-group" id="player-list"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/create_tracking.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
